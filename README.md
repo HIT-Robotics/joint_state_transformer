@@ -1,5 +1,10 @@
 
 # joint_state_transformer
+<p align="center">
+  <img src="docs/logos/autonox_Robotics_Logo.png" height="60" style="margin-right: 40px;">
+  <img src="docs/logos/hhn_logo.png" height="80">
+</p>
+
 
 The **joint_state_transformer** computes a valid joint configuration from a minimal set of independent joints using the robot's constraint model. It enables the integration of parallel robots into the ROS ecosystem.
 
