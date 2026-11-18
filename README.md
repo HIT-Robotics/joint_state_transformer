@@ -39,16 +39,16 @@ Run the node via the provided launch file. The urdf-file must be made available 
   default: 10
 
 - `input_action_name`  
-  Source trajectory action (e.g., MoveIt2)
-  default: /follow_joint_trajectory
+  Source trajectory action (e.g., MoveIt2)  
+  default: `~/follow_joint_trajectory` (resolves to `/joint_state_transformer/follow_joint_trajectory` for the default node name)
 
 - `output_action_name`  
   Target action receiving the transformed trajectory
   default: /joint_trajectory_controller/follow_joint_trajectory
 
 - `input_joint_states_topic`  
-  Topic with measured joint states (can be the same as `output_joint_states_topic`)
-  default: /joint_states
+  Topic with measured joint states  (can be the same as `output_joint_states_topic`)
+  default: /joint_states  
 
 - `output_joint_states_topic`  
   Topic publishing computed joint states (used by `robot_state_publisher`)

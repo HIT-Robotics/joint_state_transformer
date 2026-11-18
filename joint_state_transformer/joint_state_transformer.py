@@ -46,7 +46,7 @@ class JointStateTransformer(Node):
 
         self.joint_state_subscriber = self.create_subscription(
             JointState,
-            self.get_parameter('output_joint_states_topic').value,
+            self.get_parameter('input_joint_states_topic').value,
             self.joint_state_callback,
             qos_joint_state)
 
@@ -67,12 +67,7 @@ class JointStateTransformer(Node):
         # prevent multiple initializations
         if self.initialized:
             return
-        # initialize based on the recieved robot_description
-        filename = '/tmp/joint_state_transformer/description.urdf' 
-        os.makedirs(os.path.dirname(filename), exist_ok=True)
-        with open(filename,'w') as file:
-            file.write(msg.data)
-        self.robot_model = RobotModel(filename)
+        self.robot_model = RobotModel(msg.data)
         self._joint_names = np.array(self.robot_model.joint_names)
         
         self.last_state, _ = calcValidMotionState(self.robot_model, tol=self.tolerance, num_iterations=self.max_iter)
