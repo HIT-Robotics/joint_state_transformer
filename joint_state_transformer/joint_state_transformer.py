@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from robot_model import RobotModel, calcValidMotionState, CoordinateType, levenbergMarquardt
+from robot_model import RobotModel, calcValidMotionState, levenbergMarquardt
 import rclpy
 from rclpy.qos import QoSProfile
 from rclpy.qos import QoSDurabilityPolicy
